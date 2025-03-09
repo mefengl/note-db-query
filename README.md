@@ -2,6 +2,15 @@
 
 A small library to add type-safety to your database driver.
 
+## 代码阅读顺序 (Code Reading Order)
+
+推荐按以下顺序阅读代码，以便更好地理解项目结构和实现逻辑：
+
+1. [index.ts](./src/index.ts) - 入口文件，导出模块的公共API
+2. [query.ts](./src/query.ts) - 定义查询相关的核心接口和基类
+3. [sync.ts](./src/sync.ts) - 同步数据库查询实现
+4. [async.ts](./src/async.ts) - 异步数据库查询实现
+
 ```ts
 const rows = db.query("SELECT user.id, user.username, user.email, user.email_verified, user.profile FROM user", []);
 for (const row of rows) {
